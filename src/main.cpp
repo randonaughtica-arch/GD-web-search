@@ -15,9 +15,9 @@ class $modify(WebSearchEditorUI, EditorUI) {
 
         // Sit next to the pause / settings buttons when Node IDs is installed,
         // otherwise use our own menu just below the pause button
-        if (auto menu = this->getChildByID("settings-menu")) {
-            menu->addChild(btn);
-            menu->updateLayout();
+        if (auto settingsMenu = this->getChildByID("settings-menu")) {
+            settingsMenu->addChild(btn);
+            settingsMenu->updateLayout();
         }
         else {
             auto winSize = CCDirector::get()->getWinSize();
