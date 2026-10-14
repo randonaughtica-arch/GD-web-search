@@ -1,0 +1,51 @@
+{
+    "geode": "5.11.1",
+    "gd": {
+        "win": "2.2081",
+        "mac": "2.2081",
+        "android": "2.2081",
+        "ios": "2.2081"
+    },
+    "id": "jeremy.editor-web-search",
+    "name": "Editor Web Search",
+    "version": "v1.0.0",
+    "developer": "Jeremy",
+    "description": "Search the internet without leaving the level editor",
+    "tags": ["editor", "utility", "online"],
+    "settings": {
+        "default-source": {
+            "type": "string",
+            "name": "Default Source",
+            "description": "Which source the search popup starts with. You can switch sources inside the popup at any time.",
+            "default": "Wikipedia",
+            "one-of": ["Wikipedia", "GD Wiki", "DuckDuckGo"]
+        },
+        "wiki-language": {
+            "type": "string",
+            "name": "Wikipedia Language",
+            "description": "Language code used for Wikipedia searches (e.g. <cy>en</c>, <cy>es</c>, <cy>de</c>, <cy>fr</c>).",
+            "default": "en",
+            "filter": "abcdefghijklmnopqrstuvwxyz-",
+            "match": "[a-z\\-]{2,12}"
+        },
+        "result-count": {
+            "type": "int",
+            "name": "Results Per Search",
+            "description": "Maximum number of results to fetch for wiki searches.",
+            "default": 20,
+            "min": 5,
+            "max": 50,
+            "control": {
+                "slider": true,
+                "input": true
+            }
+        },
+        "browser-engine": {
+            "type": "string",
+            "name": "Browser Search Engine",
+            "description": "Search engine used by the <cg>Web</c> button, which opens the full search in your browser.",
+            "default": "Google",
+            "one-of": ["Google", "DuckDuckGo", "Bing"]
+        }
+    }
+}
